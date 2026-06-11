@@ -135,14 +135,14 @@ export const videosContent = {
         title: "Construyendo Confianza",
         duration: "Aprox. 5 min",
         thumbnail: thumbTrustEn,
-        videoUrl: "trust-es.mp4"
+        videoUrl: "/trust-es.mp4"
       },
       {
         id: 2,
         title: "Hablemos de Ensayos",
         duration: "Aprox. 3 min",
         thumbnail: thumbTrialsEn,
-        videoUrl: "trials-es.mp4"
+        videoUrl: "/trials-es.mp4"
       }
     ]
   }
