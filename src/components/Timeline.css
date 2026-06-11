@@ -11,19 +11,6 @@
   }
 }
 
-@keyframes curtainUp {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(-100%);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
 /* Intro */
 .timeline-intro-area {
   display: flex;
@@ -34,11 +21,6 @@
   position: relative;
   color: white;
   animation: contentFadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-
-  &.exiting {
-    animation: curtainUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    pointer-events: none;
-  }
 }
 
 .timeline-intro-content {
