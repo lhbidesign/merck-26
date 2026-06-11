@@ -39,17 +39,22 @@
   --background-color: white;
   --text-color: #1A1A1A;
 
-  border-radius: 20px;
   padding: var(--padding);
-  position: relative;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: relative;
   border: none;
-  color: var(--text-color);
   text-align: left;
+  color: var(--text-color);
   cursor: pointer;
   overflow: hidden;
+  transition: transform 0.2s ease;
+
+  &:active {
+    transform: scale(0.98);
+  }
 
   h2 {
     font-size: 28px;

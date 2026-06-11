@@ -2,6 +2,9 @@ import { useState } from 'react';
 import WelcomeScreen from './components/WelcomeScreen';
 import Dashboard from './components/Dashboard';
 import CarePartners from './components/CarePartners';
+import Faqs from './components/Faqs';
+import Videos from './components/Videos';
+import Timeline from './components/Timeline';
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState('welcome');
@@ -12,8 +15,11 @@ function App() {
     setCurrentScreen('dashboard');
   };
 
-  const handleGoHome = () => {
-    setCurrentScreen('welcome');
+  const screenProps = {
+    language,
+    setLanguage,
+    onGoHome: () => setCurrentScreen('welcome'),
+    onNavigate: (screen) => setCurrentScreen(screen)
   };
 
   return (
@@ -23,20 +29,23 @@ function App() {
       )}
 
       {currentScreen === 'dashboard' && (
-        <Dashboard
-          language={language}
-          setLanguage={setLanguage}
-          onGoHome={handleGoHome}
-          onNavigate={(screen) => setCurrentScreen(screen)}
-        />
+        <Dashboard {...screenProps} />
       )}
 
       {currentScreen === 'care-partners' && (
-        <CarePartners
-          language={language}
-          setLanguage={setLanguage}
-          onGoHome={handleGoHome}
-        />
+        <CarePartners {...screenProps} />
+      )}
+
+      {currentScreen === 'timeline' && (
+        <Timeline {...screenProps} />
+      )}
+
+      {currentScreen === 'faqs' && (
+        <Faqs {...screenProps} />
+      )}
+
+      {currentScreen === 'videos' && (
+        <Videos {...screenProps} />
       )}
     </>
   );

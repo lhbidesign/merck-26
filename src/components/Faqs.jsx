@@ -1,19 +1,19 @@
-// src/components/CarePartners.jsx
+// src/components/Faqs.jsx
 import { useState } from 'react';
 import TopNav from './TopNav';
 import Footer from './Footer';
-import { carePartnersContent } from '../data/content';
-import './CarePartners.css';
+import { faqsContent } from '../data/content';
+import './Faqs.css';
 
 const Icon = ({ item }) => {
-  if (!item.icon) return <div className="accordion-icon-box"></div>;
+  if (!item.icon) return <div className="faq-icon-box"></div>;
   return (
-    <div className="accordion-icon-box" dangerouslySetInnerHTML={{ __html: item.icon }} />
+    <div className="faq-icon-box" dangerouslySetInnerHTML={{ __html: item.icon }} />
   );
 };
 
-export default function CarePartners({ language, setLanguage, onGoHome }) {
-  const t = carePartnersContent[language];
+export default function Faqs({ language, setLanguage, onGoHome }) {
+  const t = faqsContent[language];
   const [expandedId, setExpandedId] = useState(null);
 
   const toggleItem = (id) => {
@@ -21,28 +21,29 @@ export default function CarePartners({ language, setLanguage, onGoHome }) {
   };
 
   return (
-    <main className="screen care-partners-screen">
+    <main className="screen faqs-screen">
       <TopNav language={language} setLanguage={setLanguage} onGoHome={onGoHome} title={t.navTitle} />
 
-      <div className="care-content-wrapper">
-        <header className="care-header">
-          <h1>{t.header}</h1>
-        </header>
+      <div className="faqs-content-wrapper">
 
-        <div className="accordion-container">
+        <aside className="faqs-sidebar">
+          <h1 style={{ whiteSpace: 'pre-line' }}>{t.header}</h1>
+        </aside>
+
+        <section className="faqs-accordion-container">
           {t.items.map((item) => {
             const isExpanded = expandedId === item.id;
             return (
-              <div key={item.id} className={`accordion-item ${isExpanded ? 'expanded' : ''}`}>
+              <div key={item.id} className={`faq-accordion-item ${isExpanded ? 'expanded' : ''}`}>
 
                 <button
-                  className="accordion-header-row"
+                  className="faq-accordion-header-row"
                   onClick={() => toggleItem(item.id)}
                   aria-expanded={isExpanded}
                 >
                   <Icon item={item} />
                   <h3>{item.title}</h3>
-                  <div className="accordion-toggle-icon" aria-hidden="true">
+                  <div className="faq-toggle-icon" aria-hidden="true">
                     {isExpanded ? (
                       <svg width="22" height="2" viewBox="0 0 24 2" fill="currentColor"><rect width="24" height="2" /></svg>
                     ) : (
@@ -51,9 +52,9 @@ export default function CarePartners({ language, setLanguage, onGoHome }) {
                   </div>
                 </button>
 
-                <div className="accordion-animated-wrapper" aria-hidden={!isExpanded}>
-                  <div className="accordion-body-row">
-                    <div className="accordion-body-content">
+                <div className="faq-animated-wrapper" aria-hidden={!isExpanded}>
+                  <div className="faq-body-row">
+                    <div className="faq-body-content">
                       <p>{item.text}</p>
                     </div>
                   </div>
@@ -62,7 +63,8 @@ export default function CarePartners({ language, setLanguage, onGoHome }) {
               </div>
             );
           })}
-        </div>
+        </section>
+
       </div>
 
       <Footer language={language} />

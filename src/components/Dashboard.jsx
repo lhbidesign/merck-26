@@ -28,7 +28,6 @@ export default function Dashboard({ language, setLanguage, onGoHome, onNavigate 
             <ArrowIcon />
           </div>
 
-          {/* REFACTOR: Changed to a button for screenreader & keyboard accessibility */}
           <button
             className="card card-care"
             onClick={() => onNavigate('care-partners')}
@@ -38,18 +37,32 @@ export default function Dashboard({ language, setLanguage, onGoHome, onNavigate 
             <ArrowIcon />
           </button>
 
-          <div className="card card-timeline">
+          <button
+            className="card card-timeline"
+            onClick={() => onNavigate('timeline')}
+            aria-label={`Maps to ${t.cards.timeline}`}
+          >
             <h2>{t.cards.timeline}</h2>
             <ArrowIcon />
-          </div>
-          <div className="card card-faqs">
+          </button>
+
+          <button
+            className="card card-faqs"
+            onClick={() => onNavigate('faqs')}
+            aria-label={`Maps to ${t.cards.faqs}`}
+          >
             <h2>{t.cards.faqs}</h2>
             <ArrowIcon />
-          </div>
-          <div className="card card-videos">
+          </button>
+
+          <button
+            className="card card-videos"
+            onClick={() => onNavigate('videos')}
+            aria-label={`Maps to ${t.cards.videos}`}
+          >
             <h2>{t.cards.videos}</h2>
             <ArrowIcon />
-          </div>
+          </button>
         </div>
       </div>
     </main>

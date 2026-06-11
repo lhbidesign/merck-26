@@ -50,6 +50,7 @@
   --merck-teal: #00857C;
   --merck-light-teal: #6ECEB2;
   --merck-blue: #0C2340;
+  --merck-pastel-blue: #69B8F7;
 }
 
 /* Reset */
@@ -76,7 +77,6 @@ dd {
 
 body {
   min-height: 100vh;
-  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -113,7 +113,7 @@ body {
 }
 
 .screen {
-  min-height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
 }
