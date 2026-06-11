@@ -4,7 +4,6 @@ import TopNav from './TopNav';
 import { videosContent } from '../data/content';
 import './Videos.css';
 
-// Reusable SVG Icons
 const PlayIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
 );

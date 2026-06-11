@@ -69,12 +69,13 @@
   h2 {
     font-size: 40px;
     font-weight: bold;
+    line-height: 1.2;
     color: #1A1A1A;
   }
 
   p {
+    margin-block-start: 12px;
     color: #AAAAAA;
-    margin-block-start: 4px;
   }
 }
 

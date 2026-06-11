@@ -24,11 +24,23 @@ const CheckIcon = () => (
   </svg>
 );
 
+const DownArrowIcon = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="12" y1="5" x2="12" y2="19"></line>
+    <polyline points="19 12 12 19 5 12"></polyline>
+  </svg>
+);
+
 export default function Timeline({ language, setLanguage, onGoHome }) {
   const t = timelineContent[language];
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const [showIntro, setShowIntro] = useState(true);
   const activeEra = t.eras[activeIndex];
+
+  const handleNavClick = (index) => {
+    setActiveIndex(index);
+    setShowIntro(false);
+  };
 
   if (!activeEra) return null;
 
@@ -36,52 +48,65 @@ export default function Timeline({ language, setLanguage, onGoHome }) {
     <main className="screen timeline-screen">
       <TopNav language={language} setLanguage={setLanguage} onGoHome={onGoHome} title={t.navTitle} />
 
-      <section className="timeline-main-area">
-
-        <div className="timeline-content-fade" key={activeEra.id}>
-          <div className="timeline-image-col">
-            <img src={activeEra.image} alt={activeEra.title} className="timeline-image" />
+      {showIntro ? (
+        <section className="timeline-intro-area">
+          <div className="timeline-intro-content">
+            <h1 className="intro-title">How clinical trials today are designed to protect and include you</h1>
+            <p className="intro-subtitle">Tap an era below to explore</p>
+            <button
+              className="intro-down-btn"
+              onClick={() => setShowIntro(false)}
+              aria-label="Explore timeline"
+            >
+              <DownArrowIcon />
+            </button>
+            <p className="intro-copyright">{t.copy}</p>
           </div>
-
-          <div className="timeline-text-col">
-            <h1 className="era-year">{activeEra.year}</h1>
-            <h2 className="era-title">{activeEra.title}</h2>
-            <p className="era-subtitle">{activeEra.subtitle}</p>
-
-            <ul className="era-bullets">
-              {activeEra.bullets.map((bullet, idx) => (
-                <li key={idx}>
-                  <CheckIcon />
-                  <span>{bullet}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="era-disclaimer-box">
-              <p>{t.disclaimer}</p>
-              <p className="era-sources">{t.sources}</p>
+        </section>
+      ) : (
+        <section className="timeline-main-area">
+          <div className="timeline-content-fade" key={activeEra.id}>
+            <div className="timeline-image-col">
+              <img src={activeEra.image} alt={activeEra.title} className="timeline-image" />
+            </div>
+            <div className="timeline-text-col">
+              <h1 className="era-year">{activeEra.year}</h1>
+              <h2 className="era-title">{activeEra.title}</h2>
+              <p className="era-subtitle">{activeEra.subtitle}</p>
+              <ul className="era-bullets">
+                {activeEra.bullets.map((bullet, idx) => (
+                  <li key={idx}>
+                    <CheckIcon />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="era-disclaimer-box">
+                <p>{t.disclaimer}</p>
+                <p className="era-sources">{t.sources}</p>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div className="timeline-copyright">{t.copy}</div>
-      </section>
+          <div className="timeline-copyright">{t.copy}</div>
+        </section>
+      )}
 
       <nav className="timeline-bottom-nav">
         <div className="timeline-connecting-line"></div>
-
         <div
           className="timeline-nav-highlight"
-          style={{ transform: `translateX(${activeIndex * 100}%)` }}
+          style={{
+            transform: `translateX(${activeIndex * 100}%)`,
+            opacity: showIntro ? 0 : 1
+          }}
         ></div>
-
         {t.eras.map((era, index) => {
-          const isActive = activeIndex === index;
+          const isActive = !showIntro && activeIndex === index;
           return (
             <button
               key={era.id}
               className={`timeline-nav-btn ${isActive ? 'active' : ''}`}
-              onClick={() => setActiveIndex(index)}
+              onClick={() => handleNavClick(index)}
               aria-label={`View era ${era.year}`}
               aria-current={isActive}
             >

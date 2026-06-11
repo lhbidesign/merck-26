@@ -3,9 +3,7 @@
   position: relative;
   height: 100dvh;
   width: 100vw;
-  background-image: url('../assets/images/splash-bg.jpg');
-  background-size: cover;
-  background-position: center bottom;
+  background: url('../assets/images/splash-bg.jpg') no-repeat center bottom / cover;
   color: white;
   overflow: hidden;
 }
@@ -39,7 +37,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
+  gap: 22px;
 
   p {
     font-size: 18px;
@@ -62,5 +60,6 @@
 }
 
 .welcome-logo {
-  width: 480px;
+  margin-block-start: 22px;
+  width: 620px;
 }
