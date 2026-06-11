@@ -1,0 +1,31 @@
+/* src/components/Footer.css */
+.footer-container {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--merck-blue);
+  color: white;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-qr {
+  width: 80px;
+  height: 80px;
+  border: 3px solid var(--merck-teal);
+}
+
+.footer-url {
+  font-weight: bold;
+  color: var(--merck-light-teal);
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: #9C9C9C;
+}

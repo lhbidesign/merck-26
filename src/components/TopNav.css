@@ -1,0 +1,80 @@
+/* src/components/TopNav.css */
+.top-nav {
+  --button-bg: rgba(255, 255, 255, 0.1);
+  --button-color: 255, 255, 255;
+  --button-bg-hover: rgba(255, 255, 255, 0.2);
+  --button-border: 1px solid rgba(255, 255, 255, 0.2);
+
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--merck-teal);
+  border-bottom: var(--button-border);
+}
+
+.top-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.top-nav-home-btn {
+  width: 44px;
+  height: 36px;
+  background: var(--button-bg);
+  border: var(--button-border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(var(--button-color));
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:active {
+    background: var(--button-bg-hover);
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.top-nav-logo {
+  height: 32px;
+}
+
+.top-nav-title {
+  font-size: 22px;
+  font-weight: normal;
+  color: white;
+}
+
+.top-nav-lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--button-bg);
+  border: var(--button-border);
+  border-radius: 100px;
+  padding: 4px 28px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: rgba(var(--button-color), 0.6);
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+
+  &.active {
+    color: rgb(var(--button-color));
+  }
+}
+
+.top-nav-lang-divider {
+  color: rgba(var(--button-color), 0.4);
+}

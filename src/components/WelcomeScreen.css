@@ -1,0 +1,66 @@
+/* src/WelcomeScreen.css */
+.welcome-container {
+  position: relative;
+  height: 100dvh;
+  width: 100vw;
+  background-image: url('../assets/images/splash-bg.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  color: white;
+  overflow: hidden;
+}
+
+.welcome-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.welcome-content {
+  width: 100%;
+  height: 100%;
+  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 48px;
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.welcome-center-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+
+  p {
+    font-size: 18px;
+  }
+}
+
+.welcome-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.welcome-button-group {
+  display: flex;
+  gap: 80px;
+}
+
+.welcome-disclaimer {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.welcome-logo {
+  width: 480px;
+}
