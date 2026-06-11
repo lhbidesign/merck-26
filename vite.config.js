@@ -17,7 +17,7 @@ export default defineConfig({
         theme_color: '#00857C',
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,mp4}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,mp4,jpg,jpeg,webp,woff2}'],
         maximumFileSizeToCacheInBytes: 105000000
       }
     })
