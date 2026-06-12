@@ -5,7 +5,7 @@ import { faqsContent } from '../data/content';
 import './Faqs.css';
 
 export default function Faqs({ language }) {
-  const t = faqsContent[language];
+  const t = faqsContent[language] || faqsContent['en'];
   const [expandedId, setExpandedId] = useState(null);
 
   const toggleItem = (id) => {
@@ -22,7 +22,7 @@ export default function Faqs({ language }) {
         items={t.items}
         expandedId={expandedId}
         toggleItem={toggleItem}
-        customPrefix="faq-accordion"
+        customPrefix="faq"
       />
     </div>
   );

@@ -88,11 +88,6 @@
   cursor: pointer;
   transition: all 0.2s ease;
 
-  &:hover:not(.quiz-disabled) {
-    border-color: var(--merck-light-teal);
-    background-color: #F1F7F8;
-  }
-
   &.quiz-disabled {
     cursor: not-allowed;
   }

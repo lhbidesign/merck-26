@@ -6,21 +6,29 @@ import qrCode from '../assets/images/qr-code.jpg';
 import { Logo } from '../components/Icons';
 
 export default function ClinicalTrialsQuiz({ language, onNavigate }) {
-  const t = quizContent[language];
-  const quizData = t.data;
+  const t = quizContent[language] || quizContent['en'];
+  const quizData = t?.data || [];
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
-  const [completions, setCompletions] = useState(() => {
-    const saved = localStorage.getItem('merck_quiz_completions');
-    return saved ? parseInt(saved, 10) : 0;
-  });
   const [showExitModal, setShowExitModal] = useState(false);
+  const [completions, setCompletions] = useState(() => {
+    try {
+      const saved = localStorage.getItem('merck_quiz_completions');
+      return saved ? parseInt(saved, 10) : 0;
+    } catch (e) {
+      console.warn('LocalStorage blocked', e);
+      return 0;
+    }
+  });
 
   const handleOptionClick = (index) => {
-    if (selectedOption !== null) return;
+    if (selectedOption !== null) {
+      return;
+    }
+
     setSelectedOption(index);
     setShowFeedback(true);
   };
@@ -60,6 +68,10 @@ export default function ClinicalTrialsQuiz({ language, onNavigate }) {
   }
 
   const data = quizData[currentQuestion];
+  if (!data) {
+    return null;
+  }
+
   const isCorrect = selectedOption === data.correctIndex;
   const progressPercent = ((currentQuestion + (selectedOption !== null ? 1 : 0)) / quizData.length) * 100;
 
@@ -99,7 +111,14 @@ export default function ClinicalTrialsQuiz({ language, onNavigate }) {
             }
 
             return (
-              <div key={index} className={optionClass} onClick={() => handleOptionClick(index)} role="button" tabIndex="0">
+              <div
+                key={index}
+                className={optionClass}
+                onClick={() => handleOptionClick(index)}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { handleOptionClick(index); } }}
+                role="button"
+                tabIndex="0"
+              >
                 <div className="quiz-option-circle"></div>
                 <span className="quiz-option-text">{text}</span>
               </div>

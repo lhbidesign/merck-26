@@ -39,7 +39,7 @@
   border: 1px solid var(--row-border);
   border-radius: 5px;
 
-  &.expanded {
+  &[data-expanded="true"] {
     background-color: var(--expanded-bg);
 
     .faq-accordion-header-row {
@@ -48,10 +48,6 @@
       h3 {
         font-weight: bold;
       }
-    }
-
-    .faq-accordion-toggle-icon {
-      color: var(--text-color);
     }
   }
 }
@@ -88,11 +84,6 @@
     width: 24px;
     height: 24px;
   }
-}
-
-.faq-accordion-toggle-icon {
-  color: #AEAEAE;
-  margin-left: 20px;
 }
 
 .faq-accordion-body-content {

@@ -53,11 +53,6 @@
   text-align: left;
   color: var(--text-color);
   overflow: hidden;
-  transition: transform 0.2s ease;
-
-  &:active {
-    transform: scale(0.98);
-  }
 
   h2 {
     font-size: 28px;

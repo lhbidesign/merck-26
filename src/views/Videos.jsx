@@ -5,14 +5,16 @@ import './Videos.css';
 import { ArrowRightIcon, CloseIcon, PlayIcon } from '../components/Icons';
 
 export default function Videos({ language }) {
-  const t = videosContent[language];
+  const t = videosContent[language] || videosContent['en'];
+  const videoItems = t?.items || [];
+
   const [activeVideo, setActiveVideo] = useState(null);
 
   return (
     <>
       <section className="videos-content-wrapper">
         <div className="videos-grid">
-          {t.items.map((video) => (
+          {videoItems.map((video) => (
             <button
               key={video.id}
               className="video-card"

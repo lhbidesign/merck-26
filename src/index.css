@@ -58,6 +58,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body,
@@ -78,6 +79,11 @@ dd {
 body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+  overscroll-behavior: none;
+  -webkit-touch-callout: none;
 }
 
 img,
@@ -133,10 +139,6 @@ body {
   transition: transform 0.2s ease;
 }
 
-.btn:active {
-  transform: scale(0.95);
-}
-
 .btn-primary {
   background-color: var(--merck-teal);
   color: white;
@@ -145,4 +147,13 @@ body {
 .btn-secondary {
   background-color: white;
   color: #333;
+}
+
+/* Error screen */
+.error-screen {
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background-color: var(--merck-teal);
+  color: white;
 }

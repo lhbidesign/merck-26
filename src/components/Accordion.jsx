@@ -1,25 +1,29 @@
 import './Accordion.css';
 import { CollapseIcon, ExpandIcon } from './Icons';
 
-export default function Accordion({ items, expandedId, toggleItem, customPrefix = 'accordion' }) {
+export default function Accordion({ items, expandedId, toggleItem, customPrefix = 'custom' }) {
   return (
-    <div className={`${customPrefix}-container`}>
+    <div className={`${customPrefix}-accordion-container`}>
       {items.map((item) => {
         const isExpanded = expandedId === item.id;
         return (
-          <div key={item.id} className={`${customPrefix}-item ${isExpanded ? 'expanded' : ''}`} data-accordion-item>
+          <div
+            key={item.id}
+            className={`accordion-item ${customPrefix}-accordion-item`}
+            data-expanded={isExpanded ? true : false}
+          >
             <button
-              className={`${customPrefix}-header-row`}
+              className={`${customPrefix}-accordion-header-row`}
               onClick={() => toggleItem(item.id)}
               aria-expanded={isExpanded}
             >
               {item.icon ? (
-                <div className={`${customPrefix}-icon-box`} dangerouslySetInnerHTML={{ __html: item.icon }} />
+                <div className={`${customPrefix}-accordion-icon-box`} dangerouslySetInnerHTML={{ __html: item.icon }} />
               ) : (
-                <div className={`${customPrefix}-icon-box`}></div>
+                <div className={`${customPrefix}-accordion-icon-box`}></div>
               )}
               <h3>{item.title}</h3>
-              <div className={`${customPrefix}-toggle-icon`} aria-hidden="true">
+              <div className="accordion-toggle-icon" aria-hidden="true">
                 {isExpanded ? (
                   <ExpandIcon />
                 ) : (
@@ -28,9 +32,9 @@ export default function Accordion({ items, expandedId, toggleItem, customPrefix 
               </div>
             </button>
 
-            <div className={`${customPrefix}-animated-wrapper`} data-accordion-animated-wrapper aria-hidden={!isExpanded}>
-              <div className={`${customPrefix}-body-row`} data-accordion-body-row>
-                <div className={`${customPrefix}-body-content`} data-accordion-body-content>
+            <div className={`accordion-animated-wrapper ${customPrefix}-accordion-animated-wrapper`} aria-hidden={!isExpanded}>
+              <div className={`accordion-body-row ${customPrefix}-accordion-body-row`}>
+                <div className={`accordion-body-content ${customPrefix}-accordion-body-content`}>
                   <p>{item.text}</p>
                 </div>
               </div>

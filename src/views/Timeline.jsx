@@ -5,17 +5,19 @@ import './Timeline.css';
 import { CheckIcon, DownArrowIcon } from '../components/Icons';
 
 export default function Timeline({ language }) {
-  const t = timelineContent[language];
+  const t = timelineContent[language] || timelineContent['en'];
   const [activeIndex, setActiveIndex] = useState(0);
   const [showIntro, setShowIntro] = useState(true);
-  const activeEra = t.eras[activeIndex];
+  const activeEra = t.eras[activeIndex] || t.eras[0];
 
   const handleNavClick = (index) => {
     setActiveIndex(index);
     setShowIntro(false);
   };
 
-  if (!activeEra) return null;
+  if (!activeEra) {
+    return null
+  };
 
   return (
     <>

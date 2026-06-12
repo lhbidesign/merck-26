@@ -5,7 +5,7 @@ import { carePartnersContent } from '../data/content';
 import './CarePartners.css';
 
 export default function CarePartners({ language }) {
-  const t = carePartnersContent[language];
+  const t = carePartnersContent[language] || carePartnersContent['en'];
   const [expandedId, setExpandedId] = useState(null);
 
   const toggleItem = (id) => {
@@ -22,7 +22,7 @@ export default function CarePartners({ language }) {
         items={t.items}
         expandedId={expandedId}
         toggleItem={toggleItem}
-        customPrefix="accordion"
+        customPrefix="care"
       />
     </div>
   );
