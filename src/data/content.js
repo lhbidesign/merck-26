@@ -247,3 +247,128 @@ export const timelineContent = {
     ]
   }
 };
+
+export const quizContent = {
+  en: {
+    navTitle: "Clinical Trials Quiz",
+    questionOf: "Question",
+    of: "of",
+    correctHeader: "Yes, that's correct!",
+    incorrectHeader: "Sorry, that's incorrect.",
+    didYouKnow: "Did you know?",
+    nextBtn: "Next Question",
+    finishBtn: "Finish",
+    outroTitle: "Thank you for participating!",
+    exitBtn: "Exit",
+    modalText: "Are you sure? If you exit now, progress will be lost.",
+    modalCancel: "Go Back",
+    modalConfirm: "Exit",
+    data: [
+      {
+        question: "What is a clinical trial?",
+        options: [
+          "A test to diagnose a medical condition",
+          "A research study to evaluate the safety and effectiveness of new treatments or medicines",
+          "A process required before a patient can access medical care",
+          "A training course for future doctors and nurses",
+        ],
+        correctIndex: 1,
+        mediFact: "All medicines and vaccines that are approved and available for patients are first studied in clinical trials to see if they are safe and effective. Each trial follows strict ethical guidelines to help protect participants' rights and safety.",
+      },
+      {
+        question: "Which of the following is a common myth about clinical trials?",
+        options: [
+          "Patients who enroll in clinical trials may choose to leave the trial at any time, for any reason",
+          "People should only consider clinical trials as a last resort",
+          "Clinical trials aim to gather medical information by including participants at different stages of their illness",
+          "Clinical trials are essential for advancing medical knowledge and improving patient care",
+        ],
+        correctIndex: 1,
+        mediFact: "Misconceptions can hinder individuals and communities from participating in clinical research. If you're curious and would like to learn more about clinical trials, talk to your doctor about whether joining a clinical trial might be an option for you.",
+      },
+      {
+        question: "What are some factors that can prevent people from participating in clinical trials?",
+        options: [
+          "Costs associated with study-related care",
+          "Extra time and attention for study-related tasks and visits",
+          "Difficulty traveling to trial sites",
+          "All of the above",
+        ],
+        correctIndex: 3,
+        mediFact: "There are barriers that may factor into whether people can participate in a clinical trial such as financial costs, travel challenges and safety concerns. In response to these challenges, Merck has developed programs that focus on enhancing access and increasing awareness of clinical trials.",
+      },
+      {
+        question: "Why is representation in clinical trials important?",
+        options: [
+          "People may respond differently to medicines depending on their age, gender, weight, ethnicity and other factors",
+          "When people from diverse backgrounds take part in clinical trials, it helps researchers understand whether investigational medicines are safe and effective for different communities",
+          "Representation in clinical research helps to provide a more complete picture of how investigational medicines work across groups",
+          "All of the above",
+        ],
+        correctIndex: 3,
+        mediFact: "Only 24% of clinical trial participants today are from communities of color, despite making up more than 40% of the U.S. population and facing higher burdens of many diseases. When communities are underrepresented in research, the results may not reflect how investigational medicines work for those they're intended to help.",
+      }
+    ]
+  },
+  es: {
+    navTitle: "Cuestionario de Ensayos Clínicos",
+    questionOf: "Pregunta",
+    of: "de",
+    correctHeader: "¡Sí, eso es correcto!",
+    incorrectHeader: "Lo siento, eso es incorrecto.",
+    didYouKnow: "¿Sabías que...?",
+    nextBtn: "Siguiente Pregunta",
+    finishBtn: "Finalizar",
+    outroTitle: "¡Gracias por participar!",
+    exitBtn: "Salir",
+    modalText: "¿Está seguro? Si sale ahora, se perderá todo el progreso.",
+    modalCancel: "Volver",
+    modalConfirm: "Salir",
+    data: [
+      {
+        question: "¿Qué es un ensayo clínico?",
+        options: [
+          "Una prueba para diagnosticar una condición médica",
+          "Un estudio de investigación para evaluar la seguridad y eficacia de nuevos tratamientos o medicamentos",
+          "Un proceso requerido antes de que un paciente pueda acceder a la atención médica",
+          "Un curso de capacitación para futuros médicos y enfermeras",
+        ],
+        correctIndex: 1,
+        mediFact: "Todos los medicamentos y vacunas aprobados y disponibles para los pacientes se estudian primero en ensayos clínicos para verificar si son seguros y eficaces. Cada ensayo sigue estrictas pautas éticas para ayudar a proteger los derechos y la seguridad de los participantes.",
+      },
+      {
+        question: "¿Cuál de los siguientes es un mito común sobre los ensayos clínicos?",
+        options: [
+          "Los pacientes que se inscriben en ensayos clínicos pueden optar por abandonar el ensayo en cualquier momento, por cualquier motivo",
+          "Las personas solo deberían considerar los ensayos clínicos como último recurso",
+          "Los ensayos clínicos tienen como objetivo recopilar información médica al incluir a participantes en diferentes etapas de su enfermedad",
+          "Los ensayos clínicos son esenciales para avanzar en el conocimiento médico y mejorar la atención al paciente",
+        ],
+        correctIndex: 1,
+        mediFact: "Las ideas erróneas pueden impedir que las personas y las comunidades participen en la investigación clínica. Si tiene curiosidad y desea obtener más información sobre los ensayos clínicos, hable con su médico sobre si unirse a un ensayo clínico podría ser una opción para usted.",
+      },
+      {
+        question: "¿Cuáles son algunos factores que pueden impedir que las personas participen en ensayos clínicos?",
+        options: [
+          "Costos asociados con la atención relacionada con el estudio",
+          "Tiempo y atención adicionales para tareas y visitas relacionadas con el estudio",
+          "Dificultad para viajar a los sitios del ensayo",
+          "Todas las anteriores",
+        ],
+        correctIndex: 3,
+        mediFact: "Existen barreras que pueden influir en la participación en un ensayo clínico, como los costos financieros, los desafíos de viaje y las preocupaciones de seguridad. En respuesta a estos desafíos, Merck ha desarrollado programas que se enfocan en mejorar el acceso y aumentar la concientización sobre los ensayos clínicos.",
+      },
+      {
+        question: "¿Por qué es importante la representación en los ensayos clínicos?",
+        options: [
+          "Las personas pueden responder de manera diferente a los medicamentos según su edad, género, peso, origen étnico y otros factores",
+          "Cuando personas de diversos orígenes participan en ensayos clínicos, ayuda a los investigadores a comprender si los medicamentos de investigación son seguros y eficaces para diferentes comunidades",
+          "La representación en la investigación clínica ayuda a proporcionar una imagen más completa de cómo funcionan los medicamentos de investigación en todos los grupos",
+          "Todas las anteriores",
+        ],
+        correctIndex: 3,
+        mediFact: "Solo el 24% de los participantes en ensayos clínicos en la actualidad pertenecen a comunidades de color, a pesar de que representan más del 40% de la población de los EE. UU. y enfrentan una mayor carga de muchas enfermedades. Cuando las comunidades están subrepresentadas en la investigación, es posible que los resultados no reflejen cómo funcionan los medicamentos de investigación para aquellos a quienes deben ayudar.",
+      }
+    ]
+  }
+};

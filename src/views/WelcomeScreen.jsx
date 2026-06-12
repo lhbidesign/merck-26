@@ -1,4 +1,4 @@
-// src/WelcomeScreen.jsx
+// src/views/WelcomeScreen.jsx
 import './WelcomeScreen.css';
 import merckLogo from '../assets/images/merck-logo.png';
 

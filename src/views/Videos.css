@@ -1,4 +1,4 @@
-/* src/components/Videos.css */
+/* src/views/Videos.css */
 .videos-screen {
   --background-color: #EBF3F0;
 }
@@ -24,7 +24,6 @@
   overflow: hidden;
   text-align: left;
   transition: transform 0.2s ease;
-  cursor: pointer;
 
   &:active {
     transform: scale(0.98);
@@ -128,7 +127,6 @@
   border: none;
   border-radius: 50%;
   color: white;
-  cursor: pointer;
   z-index: 10000;
 
   svg {

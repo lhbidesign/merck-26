@@ -1,4 +1,4 @@
-// src/components/Footer.jsx
+// src/views/Footer.jsx
 import './Footer.css';
 import qrCode from '../assets/images/qr-code.jpg';
 

@@ -1,0 +1,224 @@
+/* src/views/ClinicalTrialsQuiz.css */
+.quiz-app-container {
+  --correct-bg: #6ECEB233;
+  --correct-border: var(--merck-teal);
+  --incorrect-bg: #fff7d6;
+  --incorrect-border: #ffa447;
+
+  padding: 36px;
+  flex: 1;
+  overflow-y: auto;
+  max-width: 860px;
+  margin: 0 auto;
+  color: #1A1A1A;
+}
+
+.quiz-header {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  align-items: flex-start;
+}
+
+.quiz-header-logo {
+  width: 360px;
+  margin: 0 auto;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.quiz-btn-exit-top {
+  background: transparent;
+  border: none;
+  color: var(--merck-teal);
+  font-size: 28px;
+}
+
+.quiz-progress-bar-container {
+  width: 100%;
+  height: 14px;
+  margin-block-start: 16px;
+  background-color: #EEEEEE;
+  border: 1px solid var(--merck-teal);
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.quiz-progress-bar {
+  height: 100%;
+  background-color: var(--merck-teal);
+  transition: width 0.3s ease;
+}
+
+.quiz-content {
+  margin-block-start: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quiz-question-number {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quiz-question-text {
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.quiz-options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.quiz-option {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  border: 2px solid #DFE6EC;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(.quiz-disabled) {
+    border-color: var(--merck-light-teal);
+    background-color: #F1F7F8;
+  }
+
+  &.quiz-disabled {
+    cursor: not-allowed;
+  }
+
+  &.quiz-correct {
+    border-color: var(--correct-border);
+    background-color: var(--correct-bg);
+
+    .quiz-option-circle {
+      background-color: var(--correct-border);
+      border-color: var(--correct-border);
+    }
+  }
+
+  &.quiz-incorrect {
+    border-color: var(--incorrect-border);
+    background-color: var(--incorrect-bg);
+
+    .quiz-option-circle {
+      background-color: var(--incorrect-border);
+      border-color: var(--incorrect-border);
+    }
+  }
+}
+
+.quiz-option-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #DFE6EC;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.quiz-did-you-know-box {
+  margin-block-end: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 2px solid var(--correct-border);
+  border-radius: 8px;
+  background-color: var(--correct-bg);
+  padding: 16px;
+
+  &.quiz-incorrect-box {
+    border-color: var(--incorrect-border);
+    background-color: var(--incorrect-bg);
+  }
+}
+
+.quiz-feedback-header {
+  font-size: 18px;
+}
+
+.quiz-did-you-know-label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Outro */
+.quiz-outro-container {
+  padding: 36px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.quiz-outro-title {
+  font-size: 32px;
+  color: var(--merck-teal);
+}
+
+.quiz-outro-content {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  img {
+    width: 240px;
+    height: 240px;
+  }
+
+  img+div {
+    flex: 1;
+    font-size: 18px;
+  }
+}
+
+.quiz-outro-link {
+  font-weight: bold;
+}
+
+/* Modal */
+.quiz-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.quiz-modal-content {
+  width: 90%;
+  max-width: 480px;
+  padding: 32px;
+  border-radius: 8px;
+  background-color: white;
+  text-align: center;
+}
+
+.quiz-modal-text {
+  font-size: 18px;
+}
+
+.quiz-modal-buttons {
+  margin-block-start: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}

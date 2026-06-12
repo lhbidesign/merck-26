@@ -1,4 +1,4 @@
-/* src/components/Faqs.css */
+/* src/Views/Faqs.css */
 .faqs-content-wrapper {
   --sidebar-bg: #D1E4DE80;
   --row-bg: #F1F7F8;
@@ -25,7 +25,7 @@
   }
 }
 
-.faqs-accordion-container {
+.faq-accordion-container {
   width: 72%;
   padding: 60px 60px 60px 112px;
   overflow-y: auto;
@@ -50,16 +50,8 @@
       }
     }
 
-    .faq-toggle-icon {
+    .faq-accordion-toggle-icon {
       color: var(--text-color);
-    }
-
-    .faq-animated-wrapper {
-      grid-template-rows: 1fr;
-    }
-
-    .faq-body-content {
-      opacity: 1;
     }
   }
 }
@@ -72,7 +64,6 @@
   display: flex;
   align-items: center;
   text-align: left;
-  cursor: pointer;
 
   h3 {
     flex: 1;
@@ -81,7 +72,7 @@
   }
 }
 
-.faq-icon-box {
+.faq-accordion-icon-box {
   width: 44px;
   height: 44px;
   margin-right: 16px;
@@ -99,27 +90,14 @@
   }
 }
 
-.faq-toggle-icon {
+.faq-accordion-toggle-icon {
   color: #AEAEAE;
   margin-left: 20px;
 }
 
-.faq-animated-wrapper {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.faq-body-row {
-  overflow: hidden;
-  min-height: 0;
-}
-
-.faq-body-content {
+.faq-accordion-body-content {
   padding: 16px 18px;
-  opacity: 0;
   font-size: 16px;
-  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (orientation: portrait) {
@@ -127,7 +105,7 @@
     width: 30%;
   }
 
-  .faqs-accordion-container {
+  .faq-accordion-container {
     width: 70%;
     padding: 60px;
   }
