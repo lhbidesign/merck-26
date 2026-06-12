@@ -74,6 +74,7 @@ export default function Videos({ language, setLanguage, onGoHome }) {
             playsInline
             disablePictureInPicture
             controlsList="nodownload"
+            crossOrigin="anonymous"
           />
         </div>
       )}

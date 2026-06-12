@@ -8,7 +8,6 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      // We removed the custom icons from the manifest as requested
       manifest: {
         name: 'Merck Kiosk Experience',
         short_name: 'MerckKiosk',
@@ -30,8 +29,27 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,mp4,jpg,jpeg,webp,woff2}'],
-        maximumFileSizeToCacheInBytes: 105000000
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg,webp,woff2}'],
+        maximumFileSizeToCacheInBytes: 105000000,
+        skipWaiting: true,
+        clientsClaim: true,
+        runtimeCaching: [
+          {
+            urlPattern: /\.(?:mp4|webm|ogg)$/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'media-cache',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+              },
+              cacheableResponse: {
+                statuses: [200]
+              },
+              rangeRequests: true
+            }
+          }
+        ]
       }
     })
   ]

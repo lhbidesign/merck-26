@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import WelcomeScreen from './components/WelcomeScreen';
 import Dashboard from './components/Dashboard';
 import CarePartners from './components/CarePartners';
@@ -21,6 +21,34 @@ function App() {
     onGoHome: () => setCurrentScreen('welcome'),
     onNavigate: (screen) => setCurrentScreen(screen)
   };
+
+  useEffect(() => {
+    const videosToCache = [
+      '/trials-en.mp4',
+      '/trust-en.mp4',
+      '/trust-es.mp4'
+    ];
+
+    const warmCache = async () => {
+      for (const video of videosToCache) {
+        try {
+          const response = await fetch(video, {
+            method: 'GET'
+          });
+
+          if (response.ok) {
+            console.log(`Video safely cached for offline: ${video}`);
+          }
+        } catch (err) {
+          console.error(`Failed to cache ${video}`, err);
+        }
+      }
+    };
+
+    if (navigator.onLine) {
+      warmCache();
+    }
+  }, []);
 
   return (
     <>
