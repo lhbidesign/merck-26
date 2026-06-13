@@ -59,6 +59,8 @@
 *::after {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  scrollbar-width: none;
+  ms-overflow-style: none;
 }
 
 body,
@@ -115,6 +117,11 @@ h6 {
 button {
   cursor: pointer;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 
 /* Main */
 html,
