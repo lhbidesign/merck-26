@@ -10,7 +10,7 @@
   overflow-y: auto;
   max-width: 860px;
   margin: 0 auto;
-  color: #1A1A1A;
+  color: var(--text-color);
 }
 
 .quiz-header {

@@ -124,7 +124,7 @@
   border-top: 1px solid #EEEEEE;
   font-size: 48px;
   font-weight: bold;
-  color: #1A1A1A;
+  color: var(--text-color);
   line-height: 1.2;
 }
 
@@ -132,7 +132,7 @@
   margin-block-start: 18px;
   font-size: 16px;
   font-weight: bold;
-  color: #1A1A1A;
+  color: var(--text-color);
 }
 
 .era-bullets {

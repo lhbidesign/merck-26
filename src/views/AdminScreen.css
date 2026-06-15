@@ -1,0 +1,48 @@
+/* src/views/AdminScreen.css */
+.admin-container {
+  height: 100dvh;
+  width: 100vw;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+}
+
+.admin-title {
+  margin-bottom: 16px;
+  font-size: 48px;
+  color: var(--merck-teal);
+}
+
+.admin-card {
+  margin-bottom: 32px;
+  padding: 48px;
+  border-radius: 12px;
+  background-color: white;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.admin-card-title {
+  margin: 0 0 16px 0;
+  font-size: 32px;
+}
+
+.admin-count {
+  margin: 0;
+  font-size: 80px;
+  font-weight: bold;
+  color: var(--merck-teal);
+}
+
+.admin-buttons-container {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-clear {
+  background-color: #e74c3c;
+  color: white;
+}

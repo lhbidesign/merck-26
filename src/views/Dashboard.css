@@ -39,7 +39,6 @@
 .card {
   --padding: 25px;
   --background-color: white;
-  --text-color: #1A1A1A;
 
   padding: var(--padding);
   border-radius: 20px;

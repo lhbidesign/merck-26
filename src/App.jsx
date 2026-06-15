@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import WelcomeScreen from './views/WelcomeScreen';
 import Dashboard from './views/Dashboard';
 import ClinicalTrialsQuiz from './views/ClinicalTrialsQuiz';
@@ -8,11 +8,15 @@ import Faqs from './views/Faqs';
 import Videos from './views/Videos';
 import TopNav from './components/TopNav';
 import Footer from './components/Footer';
+import AdminScreen from './views/AdminScreen';
 import { carePartnersContent, faqsContent, quizContent, timelineContent, videosContent } from './data/content';
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState('welcome');
   const [language, setLanguage] = useState('en');
+
+  const tapCount = useRef(0);
+  const tapTimeout = useRef(null);
 
   const onNavigate = (screen) => setCurrentScreen(screen);
 
@@ -35,6 +39,22 @@ function App() {
       case 'quiz': return quizContent[language].navTitle;
       default: return null;
     }
+  };
+
+  const handleSecretClick = () => {
+    tapCount.current += 1;
+
+    clearTimeout(tapTimeout.current);
+
+    if (tapCount.current >= 5) {
+      setCurrentScreen('admin');
+      tapCount.current = 0;
+      return;
+    }
+
+    tapTimeout.current = setTimeout(() => {
+      tapCount.current = 0;
+    }, 2000);
   };
 
   const showFooter = currentScreen === 'faqs' || currentScreen === 'care-partners';
@@ -78,6 +98,10 @@ function App() {
     }
   }, []);
 
+  if (currentScreen === 'admin') {
+    return <AdminScreen onClose={() => setCurrentScreen('welcome')} />;
+  }
+
   return (
     <>
       {currentScreen === 'welcome' ? (
@@ -102,6 +126,20 @@ function App() {
           {showFooter && <Footer language={language} />}
         </main>
       )}
+
+      <div
+        onClick={handleSecretClick}
+        style={{
+          position: 'fixed',
+          bottom: 0,
+          right: 0,
+          width: '120px',
+          height: '120px',
+          zIndex: 9999,
+          background: 'transparent'
+        }}
+        aria-hidden="true"
+      />
     </>
   );
 }

@@ -24,7 +24,7 @@
   }
 
   .accordion-toggle-icon {
-    color: #1A1A1A;
+    color: var(--text-color);
   }
 }
 
