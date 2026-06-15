@@ -16,12 +16,12 @@
 .quiz-header {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 8px;
   align-items: flex-start;
 }
 
 .quiz-header-logo {
-  width: 360px;
+  width: 200px;
   margin: 0 auto;
 
   svg {
