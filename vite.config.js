@@ -29,26 +29,27 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg,webp,woff2}'],
+        globPatterns: ['**/*.{js,css,html,mp4,webm,ogg,ico,png,svg,jpg,jpeg,webp,woff2}'],
+        maximumFileSizeToCacheInBytes: 110000000,
         skipWaiting: true,
-        clientsClaim: true,
-        runtimeCaching: [
-          {
-            urlPattern: /\.(?:mp4|webm|ogg)$/i,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'media-cache',
-              expiration: {
-                maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
-              },
-              cacheableResponse: {
-                statuses: [200]
-              },
-              rangeRequests: true
-            }
-          }
-        ]
+        clientsClaim: true
+        // runtimeCaching: [
+        //   {
+        //     urlPattern: /\.(?:mp4|webm|ogg)$/i,
+        //     handler: 'CacheFirst',
+        //     options: {
+        //       cacheName: 'media-cache',
+        //       expiration: {
+        //         maxEntries: 10,
+        //         maxAgeSeconds: 60 * 60 * 24 * 90, // 90 days
+        //       },
+        //       cacheableResponse: {
+        //         statuses: [200]
+        //       },
+        //       rangeRequests: true
+        //     }
+        //   }
+        // ]
       }
     })
   ]
