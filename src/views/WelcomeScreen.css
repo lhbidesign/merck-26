@@ -60,6 +60,7 @@
 }
 
 .welcome-logo {
-  margin-block-start: 22px;
-  width: 620px;
+  width: 420px;
+  margin-block-start: 100px;
+  align-self: flex-start;
 }

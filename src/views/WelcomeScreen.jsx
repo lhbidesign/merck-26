@@ -13,9 +13,9 @@ export default function WelcomeScreen({ onSelectLanguage }) {
             Start your journey through interactive tools, videos, and resources designed <br />
             to help you learn what clinical trials are and why representation matters.
           </p>
-          <p>
+          {/* <p>
             Select your preferred language to get started.
-          </p>
+          </p> */}
         </div>
 
         <div className="welcome-button-group">
@@ -24,15 +24,15 @@ export default function WelcomeScreen({ onSelectLanguage }) {
             onClick={() => onSelectLanguage('en')}
             aria-label="Select English"
           >
-            ENGLISH
+            GET STARTED
           </button>
-          <button
+          {/* <button
             className="btn btn-secondary"
             onClick={() => onSelectLanguage('es')}
             aria-label="Select Spanish"
           >
             ESPAÑOL
-          </button>
+          </button> */}
         </div>
 
         <img

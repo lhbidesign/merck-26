@@ -17,20 +17,22 @@ export default function TopNav({ language, setLanguage, onGoHome, onReload, titl
 
       {title && <h2 className="top-nav-title">{title}</h2>}
 
-      <div className="top-nav-lang-toggle">
-        <button
-          className={`lang-btn ${language === 'en' ? 'active' : ''}`}
-          onClick={() => setLanguage('en')}
-        >
-          EN
-        </button>
-        <span className="top-nav-lang-divider">|</span>
-        <button
-          className={`lang-btn ${language === 'es' ? 'active' : ''}`}
-          onClick={() => setLanguage('es')}
-        >
-          ES
-        </button>
+      <div className="top-nav-right">
+        {/* <div className="top-nav-lang-toggle">
+          <button
+            className={`lang-btn ${language === 'en' ? 'active' : ''}`}
+            onClick={() => setLanguage('en')}
+          >
+            EN
+          </button>
+          <span className="top-nav-lang-divider">|</span>
+          <button
+            className={`lang-btn ${language === 'es' ? 'active' : ''}`}
+            onClick={() => setLanguage('es')}
+          >
+            ES
+          </button>
+        </div> */}
       </div>
     </nav>
   );

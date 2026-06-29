@@ -16,6 +16,7 @@
 .top-nav-left {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 24px;
 }
 
@@ -54,6 +55,7 @@
   font-size: 22px;
   font-weight: normal;
   color: white;
+  text-align: center;
 }
 
 .top-nav-lang-toggle {
@@ -80,4 +82,15 @@
 
 .top-nav-lang-divider {
   color: rgba(var(--button-color), 0.4);
+}
+
+.top-nav-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top-nav-left,
+.top-nav-title,
+.top-nav-right {
+  flex: 1 0 33%;
 }
