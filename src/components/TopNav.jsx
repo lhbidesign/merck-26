@@ -3,7 +3,7 @@ import './TopNav.css';
 import merckLogo from '../assets/images/merck-logo.png';
 import { HomeIcon } from './Icons';
 
-export default function TopNav({ language, setLanguage, onGoHome, onReload, title }) {
+export default function TopNav({ onGoHome, onReload, title }) {
   return (
     <nav className="top-nav">
       <div className="top-nav-left">
