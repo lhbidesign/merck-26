@@ -3,6 +3,7 @@
   padding: 30px 70px 94px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 64px;
   flex: 1;
   background-color: var(--merck-teal);
@@ -28,6 +29,7 @@
 
 /* Grid */
 .dashboard-grid {
+  max-width: 750px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

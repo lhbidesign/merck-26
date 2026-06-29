@@ -81,7 +81,12 @@ export default function ClinicalTrialsQuiz({ language, onNavigate }) {
         <div className="quiz-header-logo">
           <Logo />
         </div>
-        <button className="quiz-btn-exit-top" onClick={() => setShowExitModal(true)}>✕</button>
+        <div className="quiz-header-controls">
+          <button className="quiz-btn-exit-top" onClick={() => setShowExitModal(true)}>✕</button>
+          <button className="btn btn-primary" onClick={handleNext}>
+            {currentQuestion === quizData.length - 1 ? t.finishBtn : t.nextBtn}
+          </button>
+        </div>
       </div>
       <div className="quiz-progress-bar-container">
         <div
@@ -134,9 +139,6 @@ export default function ClinicalTrialsQuiz({ language, onNavigate }) {
               <h4 className="quiz-did-you-know-label">{t.didYouKnow}</h4>
               <p className="quiz-did-you-know-text">{data.mediFact}</p>
             </div>
-            <button className="btn btn-primary" onClick={handleNext}>
-              {currentQuestion === quizData.length - 1 ? t.finishBtn : t.nextBtn}
-            </button>
           </div>
         )}
       </div>

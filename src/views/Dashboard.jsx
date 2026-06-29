@@ -22,10 +22,10 @@ export default function Dashboard({ language, onNavigate }) {
           <h2>{t.cards.care}</h2>
           <div className="arrow-icon"><ArrowIcon /></div>
         </button>
-        <button className="card card-timeline" onClick={() => onNavigate('timeline')}>
+        {/* <button className="card card-timeline" onClick={() => onNavigate('timeline')}>
           <h2>{t.cards.timeline}</h2>
           <div className="arrow-icon"><ArrowIcon /></div>
-        </button>
+        </button> */}
         <button className="card card-faqs" onClick={() => onNavigate('faqs')}>
           <h2>{t.cards.faqs}</h2>
           <div className="arrow-icon"><ArrowIcon /></div>

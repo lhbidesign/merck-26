@@ -16,7 +16,7 @@
 .quiz-header {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 32px;
   align-items: flex-start;
 }
 
@@ -28,6 +28,13 @@
     width: 100%;
     height: auto;
   }
+}
+
+.quiz-header-controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .quiz-btn-exit-top {

@@ -58,6 +58,7 @@
   border: none;
   display: flex;
   align-items: center;
+  color: inherit;
   text-align: left;
 
   h3 {
